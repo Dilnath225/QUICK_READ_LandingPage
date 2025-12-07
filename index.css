@@ -20,10 +20,27 @@ GLOBAL STYLES
 
 body {
     background: linear-gradient(rgba(42, 35, 35, 0.7), rgba(43, 38, 38, 0.8)),
-                url("/images/background3.png") center/cover no-repeat fixed;
+                url("/images/background.png") center/cover no-repeat fixed;
     color: var(--text-color);
     overflow-x: hidden;
     font-family: 'Times New Roman', Times, serif;
+}
+
+.glass {
+    background: var(--glass-bg);
+    border-radius: 20px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    padding: 40px;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+
 }
 
 /*Custom scrollbar*/
