@@ -152,3 +152,60 @@ h1, h2, h3{
     transform: rotate(45deg) translate(-5px, -6px); 
 }
 
+/* =============================
+   HERO SECTION
+============================= */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.hero-logo {
+    width: 180px;
+    margin-bottom: 20px;
+    animation: float 6s ease-in-out infinite;
+    filter: drop-shadow(0 0 15px rgba(255,255,255,0.2));
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    background: linear-gradient(to right, #fff, #d6a2e8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+    text-shadow: 0 0 30px rgba(214, 162, 232, 0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    opacity: 1;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+}
+
+.hero-btn {
+    padding: 15px 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50px;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(214, 162, 232, 0.2);
+}
+
+.hero-btn:hover {
+    background: var(--primary-color);
+    color: #1a1a1a;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 25px rgba(214, 162, 232, 0.6);
+}
