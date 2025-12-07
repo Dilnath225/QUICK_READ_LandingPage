@@ -1,0 +1,154 @@
+/*===========================
+GLOBAL STYLES
+============================= */
+:root{
+    --primary-color: #d6a2e8;
+    --glass-bg: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --text-color: #efeeee;
+    --accent-color: #33d6ff;
+    --transition-speed: 0.4s;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(rgba(42, 35, 35, 0.7), rgba(43, 38, 38, 0.8)),
+                url("/images/background3.png") center/cover no-repeat fixed;
+    color: var(--text-color);
+    overflow-x: hidden;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/*Custom scrollbar*/
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+h1, h2, h3{
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Accent color for subheadings and feature titles */
+.section h1,
+.section h2,
+#team h1,
+.feature-card h3 {
+    color: var(--accent-color);
+}
+
+/* Slight text glow for better contrast on dark backgrounds */
+.section h1, .section h2, .feature-card h3 {
+    text-shadow: 0 2px 8px rgba(0,0,0,0.45);
+}
+
+.section {
+    padding: 100px 10%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* =============================
+   Navigation bar
+============================= */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    position: fixed;
+    width: 90%;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    background: linear-gradient(rgba(83, 82, 82, 0.6), rgba(100, 99, 99, 0.6)), url('/images/background2.jpg') center/cover no-repeat;
+}
+
+.nav-logo img {
+    height: 40px;
+    vertical-align: middle;
+}
+
+.nav-links ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px;
+    transition: 0.4s;
+}
+
+.hamburger.active div:nth-child(1) { 
+    transform: rotate(-45deg) translate(-5px, 6px); 
+}
+
+.hamburger.active div:nth-child(2) { 
+    opacity: 1; 
+}
+
+.hamburger.active div:nth-child(3) { 
+    transform: rotate(45deg) translate(-5px, -6px); 
+}
+
