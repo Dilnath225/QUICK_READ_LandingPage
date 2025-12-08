@@ -10,7 +10,7 @@ GLOBAL STYLES
     --transition-speed: 0.4s;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -84,6 +84,21 @@ h1, h2, h3{
     text-align: center;
     position: relative;
     z-index: 1;
+}
+
+/* animation classes */
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
 }
 
 /* =============================
@@ -185,7 +200,7 @@ h1, h2, h3{
 .hero-logo {
     width: 180px;
     margin-bottom: 20px;
-    animation: float 6s ease-in-out infinite;
+    animation : floatY 6s ease-in-out infinite;
     filter: drop-shadow(0 0 15px rgba(255,255,255,0.2));
 }
 
@@ -225,4 +240,105 @@ h1, h2, h3{
     color: #1a1a1a;
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 0 25px rgba(214, 162, 232, 0.6);
+}
+
+/*features section*/
+.card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 30px;
+    margin-top: 40px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+    justify-content: space-between;
+    align-items: flex-start; 
+}
+
+.feature-card {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+ 
+}
+
+
+.feature-card { flex: 0 1 23%; max-width: 23%; box-sizing: border-box; }
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 40px rgba(214, 162, 232, 0.15);
+}
+
+
+@keyframes floatY {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
+}
+
+.feature-card {
+    
+    animation-name: floatY;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    will-change: transform;
+}
+
+
+.card-container .feature-card:nth-child(odd) { animation-delay: 0s; }
+.card-container .feature-card:nth-child(even) { animation-delay:0.5s; animation-duration: 7s; }
+
+
+
+.feature-card h3 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+}
+
+.feature-card p {
+    color: rgba(255,255,255,0.8);
+    line-height: 1.6;
+}
+
+/* see more button */
+
+.feature-card p.feature-desc {
+    display: none;
+    margin-top: 15px;
+    animation: fadeIn 0.5s ease;
+}
+
+
+.feature-card.expanded p.feature-desc {
+    display: block;
+}
+
+
+.see-more-btn {
+    background: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    align-self: flex-start; 
+}
+
+.see-more-btn:hover {
+    background: var(--primary-color);
+    color: #1a1a1a; 
+    box-shadow: 0 0 10px rgba(214, 162, 232, 0.4);
 }

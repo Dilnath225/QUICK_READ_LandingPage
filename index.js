@@ -20,3 +20,37 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+const observerOptions = {
+    threshold: 0.15 
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+}, observerOptions);
+
+
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((el) => observer.observe(el));
+
+// See More Functionality
+
+const seeMoreButtons = document.querySelectorAll('.see-more-btn');
+
+seeMoreButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+       
+        e.preventDefault();  
+        const card = button.closest('.feature-card'); 
+        card.classList.toggle('expanded');
+        if (card.classList.contains('expanded')) {
+            button.textContent = 'See Less';
+        } else {
+            button.textContent = 'See More';
+        }
+    });
+});
