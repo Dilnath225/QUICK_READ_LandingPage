@@ -74,3 +74,18 @@ document.addEventListener('DOMContentLoaded', () => {
         videoObserver.observe(video);
     }
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.getElementById('contactForm');
+    if (!contactForm) return;
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const status = document.getElementById('contactStatus');
+        status.textContent = 'Sending...';
+        // Simulate async submit (replace with real POST in production)
+        setTimeout(() => {
+            status.textContent = 'Thank you — your message has been received. We will contact you shortly.';
+            contactForm.reset();
+            setTimeout(() => { status.textContent = ''; }, 5000);
+        }, 900);
+    });
+});
