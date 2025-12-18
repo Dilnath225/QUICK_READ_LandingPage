@@ -630,3 +630,10 @@ h3 {
     flex-direction: column;
   }
 }
+footer {
+    padding: 40px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    background: #110d2f;
+    text-align: center;
+    border-top-left-radius: 20px;
+}
